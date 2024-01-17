@@ -1,0 +1,117 @@
+@use "./partials/colors" as *;
+@use "./partials/mixins" as *;
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+.header {
+    background-color: $color-background-light;
+    border-bottom: 1px solid $color-text-dark;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 2rem;
+
+    &__site-title {
+        color: transparent;
+        background-image: url(../assets/logos/medium.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 10rem;
+        height: 2rem;
+    }
+
+    &__list {
+        display: flex;
+        list-style-type: none;
+        gap: 1rem;
+        align-items: center;
+        font-weight: 300;
+    }
+
+    &__item {
+        display: none;
+
+        @include desktop {
+            display: list-item;
+        }
+    }
+
+    &__sign-in {
+        display: none;
+
+        @include tablet {
+            display: list-item;
+        }
+    }
+
+    &__getting-started {
+        background-color: $color-button-background;
+        color: $color-button-text;
+        padding: 0.75rem 1.25rem;
+        border-radius: 2rem;
+    }
+}
+/*
+.content {
+
+    width: 100%;
+    max-width: 600px;
+
+    background-color: lightsalmon;
+    // screen-size was over 200px: max-width of 160px; 
+
+}
+
+
+// Looking at site at 1600px
+
+@media (min-width: 1500px) {
+    
+}
+
+.page-wrap { 
+    width: 50%;
+}
+
+.page-wrap {
+	width: 80%;
+}
+
+.content {
+	width: 98%;
+	padding: 1%;
+}
+
+.sidebar {
+	width: 80%;
+}
+
+@media (min-width: 980px) {
+    .page-wrap { 
+        width: 95%;
+    }
+    
+    .content { 
+        width: 60%;
+        padding: 3% 4%;
+    }
+    
+    .sidebar { 
+        width: 30%;
+    }
+}
+
+// Question: Styles for > 1500px, where would those go?
+*/
